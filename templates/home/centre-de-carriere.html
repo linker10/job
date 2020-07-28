@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="topBanner" style="background-image: url('{% static "images/bkg_career.jpg" %}'); height: 1000px;">
+	<div class="content">
+		<h1>CENTRE DE CARRI&Egrave;RE</h1>
+		<p>Vous avez s&ucirc;rement d&eacute;j&agrave; entendu le dicton, &laquo; On ne na&icirc;t pas gagnant, on le devient &raquo;. Il n&rsquo;y a rien de plus vrai. La concurrence sur le march&eacute; de l&rsquo;emploi peut s&rsquo;av&eacute;rer f&eacute;roce, et souvent, pour &eacute;merger dans un oc&eacute;an de candidats, une bonne pr&eacute;paration est d&eacute;terminante. Un petit coup de pouce de nos experts vous donnera une longueur d&rsquo;avance.</p>	</div>
+</div>
+<div id="documents">
+	<div class="content">
+		<h2>CONSEILS ET OUTILS</h2>
+		<p>Si vous recherchez quelques &eacute;l&eacute;ments d&rsquo;information, jetez un coup d&rsquo;&oelig;il &agrave; nos guides pratiques de recherche d&rsquo;emploi et questions de pr&eacute;paration &agrave; l&rsquo;entrevue, ci-dessous. Vous auriez besoin de conseils personnalis&eacute;s? Rencontrez un recruteur de Quantum dans le cadre de l&rsquo;un de nos <a href="https://www.jobillico.com/fr/employeurs/quantum/voir-evenements">&eacute;v&eacute;nements &agrave; venir</a>!</p>		<div id="docList">
+						<div class="listing">
+					<div class="item"><img src="{% static 'images/doc_56.jpg' %}" alt=""></div>
+					<div class="item">
+						<h3>Un CV efficace</h3>
+						<p>Quelques directives de base pour cr&eacute;er un CV accrocheur. T&eacute;l&eacute;chargez-le.</p>						<a class="docLink" target="_blank" href="{% static 'pdfs/resumes_that_work__final___fr.pdf' %}">TÉLÉCHARGER</a>
+					</div>
+				</div>
+							<div class="listing">
+					<div class="item"><img src="{% static 'images/doc_57.jpg' %}" alt=""></div>
+					<div class="item">
+						<h3>Pour une entrevue r&eacute;ussie </h3>
+						<p>Quoi faire avant, durant et apr&egrave;s l&rsquo;entrevue, pour faire une premi&egrave;re bonne impression.</p>						<a class="docLink" target="_blank" href="{% static 'pdfs/pages_de_interview_success_checklist_2015_final_fr.pdf' %}">TÉLÉCHARGER</a>
+					</div>
+				</div>
+							<div class="listing">
+					<div class="item"><img src="{% static 'images/doc_58.jpg' %}" alt=""></div>
+					<div class="item">
+						<h3>&Eacute;chantillon de questions d&#39;entrevue </h3>
+						<p>Un bon outil pour vous exercer avant le jour J! Vous y trouverez &agrave; la fois des questions susceptibles de vous &ecirc;tre pos&eacute;es ET celles que vous pourrez poser &agrave; l&rsquo;intervieweur.</p>						<a class="docLink" target="_blank" href="{% static 'pdfs/pages_de_interview_success_checklist_2015_final_fr_2_page_2.pdf' %}">TÉLÉCHARGER</a>
+					</div>
+				</div>
+					</div>
+	</div>
+</div>
+
+<div id="links">
+	<div class="content">
+		<h2>LIENS IMPORTANTS</h2>
+		<p>Des liens utiles vers des sites Web du gouvernement contenant des renseignements g&eacute;n&eacute;raux sur l&rsquo;admissibilit&eacute; &agrave; l&rsquo;emploi, les &eacute;chelles salariales et vos droits en tant qu&rsquo;employ&eacute;(e).</p>						<a class="impLink" target="_blank" href="https://www.canada.ca/fr/emploi-developpement-social/programmes/normes-travail/normes-federales.html">Normes du travail f&eacute;d&eacute;rales - Gouvernement du Canada</a>
+							<a class="impLink" target="_blank" href="http://www.cnt.gouv.qc.ca/accueil/index.html">Normes du travail du Qu&eacute;bec - CNESST</a>
+							<a class="impLink" target="_blank" href="https://www.labour.gov.on.ca/french/es/index.php">Normes du travail de l&#39;Ontario - Minist&egrave;re du travail </a>
+							<a class="impLink" target="_blank" href="https://www.workplace.ca/laws/">Fiche de consultation - Normes d&#39;emploi par province</a>
+							<a class="impLink" target="_blank" href="https://www.canada.ca/fr/emploi-developpement-social/programmes/sante-securite.html">Sant&eacute; et s&eacute;curit&eacute; du travail - Gouvernement du Canada </a>
+							<a class="impLink" target="_blank" href="http://www.csst.qc.ca/employeurs/accidents-maladies-lesions/procedures-suivis/Pages/procedures-suivis.aspx">Sant&eacute; et s&eacute;curit&eacute; du travail Qu&eacute;bec - CNESST</a>
+							<a class="impLink" target="_blank" href="http://www.wsib.on.ca/">Sant&eacute; et s&eacute;curit&eacute; du travail Ontario - CSPAAT</a>
+							<a class="impLink" target="_blank" href="https://www.canada.ca/fr/emploi-developpement-social/ministere/portefeuille/service-canada.html">Service Canada</a>
+							<a class="impLink" target="_blank" href="http://www.cic.gc.ca/francais/travailler/index.asp">Travailler au Canada (travailleurs &eacute;trangers)</a>
+				</div>
+</div>
+
+<div id="articles">
+	<div class="content">
+		<h2>BLOGUE</h2>
+		<p>La mine d&rsquo;informations des chercheurs d&rsquo;emploi et des employ&eacute;s &ndash; de la conciliation travail-famille aux &eacute;valuations de rendement&hellip; en passant par tout le reste. Jetez un coup d&#39;oeil &agrave; notre <a href="https://quantum.ca/blog/?lang=fr">blogue</a>!&nbsp;</p>	</div>
+</div>
+{% endblock %}

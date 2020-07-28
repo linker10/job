@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center;">Log-in</h1>
+    
+    {% if form.errors %}
+        <p>
+            Your username and password didn't match.
+            Please try again.
+        </p>
+    {% else %}
+    {% comment %} <p>Please, use the following form to log-in. If you don't have an account <a href="{% url 'register' %}">register here</a></p> {% endcomment %}
+    {% endif %}
+    
+    <div style="margin-left: 5px;">
+        <small>de session
+            NOTE: Ce compte est réservé aux employés temporaires actuellement en affectation. Si vous êtes un chercheur d’emploi, veuillez vous inscrire aux alertes d’emploi ici.
+        </small> 
+    </div>
+    <div style="margin-left: 5px;">
+        <div class="login-form">
+            <form action="{% url 'login' %}" method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}" />
+                <p><input type="submit" value="Log-in"></p>
+            </form>
+        </div>
+        <p><a href="{% url 'password_reset' %}">Nom d'utilisateur et mot de passe oubliés?</a></p>
+        <p><a href="{% url 'register' %}">Inscrivez-vous comme employé en affectation.</a></p>
+        <p><a href="{% url 'password_reset' %}">Inscrivez-vous comme chercheur d'emploi.</a></p>
+    </div>
+    
+  {% endblock %}
