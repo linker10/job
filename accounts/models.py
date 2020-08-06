@@ -9,7 +9,7 @@ class Profile(models.Model):
         ('employee', 'Employee'),
         ('both', 'Both')
     )
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile_user')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     date_of_birth = models.DateField(blank=True, null=True)
     account_type = models.CharField(max_length=10, choices=ACCOUNT_TYPES)
 
@@ -18,3 +18,4 @@ class Profile(models.Model):
 
     def __str__(self):
         return 'Profile ({})'.format(self.user.username)
+
