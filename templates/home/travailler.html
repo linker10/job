@@ -9,6 +9,7 @@
 </div>
 <div class="work">
 	<form id="workForm" name="workForm" method="post" action="/jobs/">
+		{% csrf_token %}
 	<input type="hidden" name="searching" value="true">
 	<label for="job-cat-home">RECHERCHE D'EMPLOI</label>
 	<select id="job-cat-home" name="category">
