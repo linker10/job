@@ -30,7 +30,7 @@ class UserRegistrationForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('document', 'date_of_birth', 'employment_type')
+        fields = ('document', 'date_of_birth', 'employment_type', 'account_type')
     
     def clean_document(self):
         document = self.cleaned_data['document']
@@ -38,11 +38,11 @@ class ProfileForm(forms.ModelForm):
         try:
             #validate content type
             main, sub = document.content_type.split('/')
-            if not (main == 'image' and sub in ['pdf', 'doc', 'docx']):
+            if not (sub in ['pdf', 'doc', 'docx']):
                 raise forms.ValidationError('Please use a pdf, or MS Word file.')
 
             #validate file size     # 4MB
-            if len(photo) > (3 * 1024000):
+            if len(document) > (3 * 1024000):
                 raise forms.ValidationError('File size may not exceed 3MBs.')
 
         except AttributeError:
@@ -55,9 +55,4 @@ class ProfileForm(forms.ModelForm):
 class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password')
-
-class ProfileEditForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ('date_of_birth', )
+        fields = ('username', 'email',)

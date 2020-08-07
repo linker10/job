@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegistrationForm, ProfileForm, UserEditForm, ProfileEditForm
+from .forms import UserRegistrationForm, ProfileForm, UserEditForm
 from .models import Profile
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
@@ -80,3 +80,21 @@ class Activate(View):
             return redirect('home:index')
         else:
             return HttpResponse('Activation link is invalid!')
+
+@login_required
+def edit(request):
+    saved = None
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user, data=request.POST)
+        profile_form = ProfileForm(instance=request.user.profile, data=request.POST, files=request.FILES)
+        saved = False
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            saved = True
+    else:
+        user_form = UserEditForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    
+    return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form, 'saved': saved})
+    

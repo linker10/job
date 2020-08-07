@@ -18,8 +18,8 @@ class DocumentForm(forms.ModelForm):
         try:
             #validate content type
             main, sub = document.content_type.split('/')
-            if not (sub in ['pdf']):
-                raise forms.ValidationError('Please use a PDF file only.')
+            if not (sub in ['pdf', 'doc', 'docx']):
+                raise forms.ValidationError('Please use a pdf, or MS Word file.')
 
             #validate file size     # 4MB
             if len(document) > (4 * 1024000):
